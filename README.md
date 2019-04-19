@@ -20,9 +20,11 @@ Emplear dos [canvas](https://processing.org/reference/PGraphics.html), uno para 
 
 Complete la tabla:
 
-| Integrante | github nick |
-|------------|-------------|
-|            |             |
+|      Integrante      |github nick|
+|----------------------|-----------|
+| Alejandro Santamaría | alejosaur |
+| Brayan Esteban Garzón| begarzonf |
+|  Juan Camilo Lozano  |  olimita  |
 
 ## Discusión
 
