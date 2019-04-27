@@ -1,9 +1,10 @@
 PGraphics py;
 PGraphics pg;
 PImage img, img2;
+float div;
 
 void setup() {
-  size(2048, 600);
+  size(1920, 640);
   colorMode(HSB);
 
   img = loadImage("img.jpg");
@@ -26,24 +27,7 @@ void draw() {
 
   // Find the largest value in the histogram
   int histMax = max(hist);
-  int indexMax = 0;
   
-  for (int i = 0; i < 256; i++) {
-    if(hist[i] >= histMax-2){
-      indexMax = i;
-      break;
-    }
-  }
-  
-  for (int i = 0; i < img2.pixels.length; i++) {
-
-    //Blanco y negro con tresshold
-    if (!(brightness(img2.pixels[i]) <= indexMax+8 && brightness(img2.pixels[i]) >= indexMax-8)) {
-      img2.pixels[i] = color(0);
-    }
-
-  }
-
   stroke(255);
   // Draw half of the histogram (skip every second value)
   for (int i = 0; i < img.width; i += 2) {
@@ -56,4 +40,19 @@ void draw() {
   }
 
   img2.updatePixels();
+}
+
+void mouseMoved() {
+  
+  for (int i = 0; i < img.pixels.length; i++) {
+
+    if (!(brightness(img.pixels[i]) <= mouseX*div+8 && brightness(img.pixels[i]) >= mouseX*div-8)) {
+      img2.pixels[i] = color(0);
+    }else{
+      img2.pixels[i] = img.pixels[i];
+    }
+
+  }
+  print(mouseX*div+8);
+  print("\n");
 }
