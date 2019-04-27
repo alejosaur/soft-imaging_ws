@@ -4,7 +4,7 @@ PImage img, img2;
 float div;
 
 void setup() {
-  size(1920, 640);
+  size(1790, 683);
   colorMode(HSB);
 
   img = loadImage("img.jpg");
