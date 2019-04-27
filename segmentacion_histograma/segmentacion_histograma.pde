@@ -9,7 +9,9 @@ void setup() {
 
   img = loadImage("img.jpg");
   img2 = loadImage("img.jpg");
+  div = 255.0/img.width;
 }
+
 void draw() {
   image(img, 0, 0);
   image(img2, img.width, 0);
